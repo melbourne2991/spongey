@@ -1,0 +1,41 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'InsaniburgerwithCheese';
+  src: url("../fonts/insaniburger/InsaniburgerwithCheese.eot?") format("eot"), url("../fonts/insaniburger/InsaniburgerwithCheese.woff") format("woff"), url("../fonts/insaniburger/InsaniburgerwithCheese.ttf") format("truetype"), url("../fonts/insaniburger/InsaniburgerwithCheese.svg#InsaniburgerwithCheese") format("svg"); }
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7; }
+
+h1 {
+  font-family: 'Futura';
+  font-size: 40px; }
+
+.row {
+  display: block;
+  padding: 20px; }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.header {
+  display: block;
+  background: #fff; }
+  .header:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.logo-medium {
+  width: 200px; }
+  .logo-medium img {
+    width: 100%; }
+
+.navigation {
+  background: #efefef;
+  padding: 20px; }
