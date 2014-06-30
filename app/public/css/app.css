@@ -23,6 +23,13 @@ h1 {
     display: table;
     clear: both; }
 
+ul.horizontal {
+  margin: 0;
+  padding: 0; }
+  ul.horizontal li {
+    display: inline;
+    padding: 20px; }
+
 .header {
   display: block;
   background: #fff; }

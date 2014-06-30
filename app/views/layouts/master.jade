@@ -5,10 +5,8 @@ html
 		link(rel="stylesheet", href="css/app.css")
 	body
 		block main
-		script(src="js/common/services.js")
-		script(src="js/common/app.js")
-	- each module in modules
-		script(src="js/#{module}/services.js")
-		script(src="js/#{module}/directives.js")
-		script(src="js/#{module}/controllers.js")
-		script(src="js/#{module}/app.js")
+		script(src="js/directives/directives.js")
+		script(src="js/directives/navigation.js")
+		script(src="js/services.js")
+		script(src="js/controllers.js")
+		script(src="js/app.js")

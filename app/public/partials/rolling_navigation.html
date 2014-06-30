@@ -1,3 +1,8 @@
-<ul>
-	<li data-ng-repeat="item in items">{{ item.name }}</li>
-</ul>
+<div>
+	<ul class="horizontal" data-ng-repeat="item_list in item_lists" data-ng-show="{{ current_items == $index }}">
+		<li data-ng-repeat="item in item_list" 
+			data-ng-click="itemClicked()">
+			{{ item.name }}
+		</li>
+	</ul>
+</div>
