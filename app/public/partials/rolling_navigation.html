@@ -1,8 +1,5 @@
 <div>
-	<ul class="horizontal" data-ng-repeat="item_list in item_lists" data-ng-show="{{ current_items == $index }}">
-		<li data-ng-repeat="item in item_list" 
-			data-ng-click="changeState(item.slug)">
-			{{ item.name }}
-		</li>
+	<ul class="horizontal">
+		<li data-ng-repeat="item in rollingNavigation"><a href="/#/sponge/{{ item.slug }}">{{ item.name }}</a></li>
 	</ul>
 </div>

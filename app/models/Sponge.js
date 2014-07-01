@@ -6,6 +6,7 @@ var schema = new mongoose.Schema({
 	updated_at: {type: Date, default: Date.now},
 	_parent: {type: mongoose.Schema.Types.ObjectId, ref: 'Sponge'},
 	sponges: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Sponge' }],
+	permalink: {type: String},
 	slug: {type: String}
 });
 
@@ -13,6 +14,14 @@ var convertToSlug = function(that) {
 	if(!that.slug) {
 		that.slug = that.name.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 	}
+};
+
+var buildPermalink = function(that) {
+	mongoose.model('Sponge', schema).findOne({ _id: that._parent }, function(err, parent) {
+		if(parent) {
+			that.permalink = parent.permalink + '/' + that.slug;
+		}
+	});
 };
 
 var updateTimestamps = function(that) {
@@ -23,11 +32,12 @@ var updateTimestamps = function(that) {
 	}
 
 	that.slug = this.name
-}
+};
 
 schema.pre('save', function (next) {
 	updateTimestamps(this);
 	convertToSlug(this);
+	buildPermalink(this);
 	next();
 });
 
