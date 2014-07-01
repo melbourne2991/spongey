@@ -6,17 +6,14 @@ angular.module('app', [
 	'app.services',
 	'app.directives',
 	'app.controllers'
-]).config(function($stateProvider) {
+]).config(['$stateProvider', function($stateProvider) {
 	$stateProvider
 	.state('index', {
 		url: '',
-		controller: function() {
-			console.log('lol');
-		}
+		controller: 'SpongeController'
 	})
 	.state('sponge', {
-		url: '/sponge/:slug',
-		controller: 'MainController'
+		url: '/sponge/{path:.*}',
+		controller: 'SpongeController'
 	});
-
-});
+}]);

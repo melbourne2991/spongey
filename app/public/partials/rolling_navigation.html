@@ -1,7 +1,7 @@
 <div>
 	<ul class="horizontal" data-ng-repeat="item_list in item_lists" data-ng-show="{{ current_items == $index }}">
 		<li data-ng-repeat="item in item_list" 
-			data-ng-click="itemClicked()">
+			data-ng-click="changeState(item.slug)">
 			{{ item.name }}
 		</li>
 	</ul>
