@@ -6,7 +6,7 @@ controllers.controller('SpongeController', ['$scope', '$state', 'spongeFactory',
 	if(!$state.params.path) {
 		slug = 'master';
 	} else {
-		slug = $state.params.path
+		slug = 'master/' + $state.params.path
 	}
 
 	spongeFactory.getSponge(slug).then(function(result) {
