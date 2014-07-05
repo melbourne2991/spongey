@@ -17,10 +17,12 @@ var convertToSlug = function(that) {
 };
 
 var buildPermalink = function(that, next) {
-	mongoose.model('Sponge', schema).findOne({ _id: that._parent }, function(err, parent) {
+	mongoose.model('Sponge', schema).findOne({ _id: that.parent }, function(err, parent) {
 		if(parent) {
+			console.log('has parent: ' + that.name);
 			that.permalink = parent.permalink + '/' + that.slug;
 		} else if(!that.permalink) {
+			console.log('has no parent: ' + that.name);
 			that.permalink = that.slug;
 		}
 

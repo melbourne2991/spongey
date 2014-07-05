@@ -3,16 +3,52 @@ var Sponge  = require('../models/Sponge');
 var mongoose 	= require('mongoose');
 
 var buildSponges = function(seeder, count, parent) {
+	if(!count) {
+		var count = 0
+	}
+
+	if(!seeder[count]) {
+		return;
+	}
+
 	var seed = seeder[count];
+
 	var sponge = new Sponge({
-		name = seed.name
-	})
+		name: seed.name
+	});
+
+	// console.log(seed.name);
 
 	if(seed.children && parent) {
 		sponge.children = [];
 		sponge.parent = parent._id;
-		buildSponges(seed.children, 0, sponge);
-	} else if ()
+
+		sponge.save(function() {
+			parent.sponges.push(sponge);
+			parent.save(function() {
+				buildSponges(seed.children, 0, sponge);
+			});
+		})
+	} else if (seed.children && !parent) {
+		sponge.children = [];
+
+		sponge.save(function() {
+			buildSponges(seed.children, 0, sponge);
+		})	
+	} else if (parent && !seed.children) {
+		sponge.parent = parent._id;
+
+		sponge.save(function() {
+			parent.sponges.push(sponge);
+			parent.save(function() {
+				buildSponges(seed.children, 0, sponge);
+			});
+		});
+	}
+
+	count++
+
+	buildSponges(seeder, count, parent);
 }
 
 // var saveAndCall = function(sponge, seed, parent, count) {
