@@ -7,7 +7,8 @@ var schema = new mongoose.Schema({
 	_parent: {type: mongoose.Schema.Types.ObjectId, ref: 'Sponge'},
 	sponges: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Sponge' }],
 	slug: {type: String},
-	permalink: {type: String}
+	permalink: {type: String},
+	is_master: {type: Boolean, default: false}
 });
 
 var convertToSlug = function(that) {
@@ -18,11 +19,9 @@ var convertToSlug = function(that) {
 
 var buildPermalink = function(that, next) {
 	mongoose.model('Sponge', schema).findOne({ _id: that.parent }, function(err, parent) {
-		if(parent) {
-			console.log('has parent: ' + that.name);
+		if(parent && !parent.is_master) {
 			that.permalink = parent.permalink + '/' + that.slug;
 		} else if(!that.permalink) {
-			console.log('has no parent: ' + that.name);
 			that.permalink = that.slug;
 		}
 
@@ -45,7 +44,5 @@ schema.pre('save', function (next) {
 	convertToSlug(this);
 	buildPermalink(this, next);
 });
-
-
 
 module.exports = mongoose.model('Sponge', schema);

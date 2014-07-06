@@ -6,11 +6,10 @@ controllers.controller('SpongeController', ['$scope', '$state', 'spongeFactory',
 	if(!$state.params.path) {
 		slug = 'master';
 	} else {
-		slug = 'master/' + $state.params.path
+		slug = '' + $state.params.path;
 	}
 
 	spongeFactory.getSponge(slug).then(function(result) {
-		console.log(result);
 		$scope.childSponges = result.data.sponges;
 	});
 }]);
