@@ -8,12 +8,14 @@ angular.module('app', [
 	'app.controllers'
 ]).config(['$stateProvider', function($stateProvider) {
 	$stateProvider
-	.state('index', {
+	.state('default', {
 		url: '',
-		controller: 'SpongeController'
+		abstract: true,
+		template: 'templates/default'
 	})
-	.state('sponge', {
+	.state('default.sponge', {
 		url: '/sponge/{path:.*}',
+		templateUrl: 'templates/sponge/view',
 		controller: 'SpongeController'
 	});
 }]);
