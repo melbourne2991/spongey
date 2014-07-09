@@ -35,8 +35,6 @@ var updateTimestamps = function(that) {
 	if(!that.created_at) {
 		that.created_at = that.updated_at;
 	}
-
-	that.slug = this.name
 };
 
 schema.pre('save', function (next) {

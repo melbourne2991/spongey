@@ -7,3 +7,14 @@ services.factory('spongeFactory', ['$http', function($http) {
 			}
 		}
 	}]);
+
+services.factory('postFactory', ['$http', function($http) {
+		return {
+			getPosts: function(sponge) {
+				return $http.get('/api/posts?sponge=' + sponge);
+			},
+			createPost: function(data) {
+				return $http.post('/api/post', data);
+			}
+		}
+	}]);

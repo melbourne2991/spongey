@@ -9,13 +9,8 @@ angular.module('app', [
 ]).config(['$stateProvider', function($stateProvider) {
 	$stateProvider
 	.state('default', {
-		url: '',
-		abstract: true,
-		template: 'templates/default'
-	})
-	.state('default.sponge', {
+		templateUrl: 'templates/sponges/view',
 		url: '/sponge/{path:.*}',
-		templateUrl: 'templates/sponge/view',
-		controller: 'SpongeController'
+		controller: 'MainController'
 	});
 }]);

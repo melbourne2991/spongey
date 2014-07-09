@@ -3,5 +3,9 @@ module.exports = function(app) {
 		res.render('index', {modules: ['navigation']});
 	});
 
+	app.get('/templates/*', function(req, res) {
+		res.render('templates/' + req.params[0]);
+	});
+
 	return app;
 }

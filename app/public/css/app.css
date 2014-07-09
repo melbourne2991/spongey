@@ -9,11 +9,19 @@
 body, html {
   margin: 0;
   padding: 0;
-  background: #f7f7f7; }
+  background: #f7f7f7;
+  font-family: 'Ubuntu', sans-serif; }
 
 h1 {
   font-family: 'Futura';
   font-size: 40px; }
+
+h2 {
+  font-family: 'Futura';
+  font-size: 24px; }
+
+ul li a {
+  text-decoration: none; }
 
 .row {
   display: block;
@@ -27,8 +35,9 @@ ul.horizontal {
   margin: 0;
   padding: 0; }
   ul.horizontal li {
-    display: inline;
-    padding: 20px; }
+    display: inline; }
+    ul.horizontal li a {
+      padding: 20px; }
 
 .header {
   display: block;
@@ -45,4 +54,26 @@ ul.horizontal {
 
 .navigation {
   background: #efefef;
-  padding: 20px; }
+  color: #000; }
+  .navigation ul li:last-child a {
+    border-right: 1px solid #b3b3b3; }
+  .navigation ul li a {
+    border-left: 1px solid #b3b3b3;
+    padding: 20px;
+    color: gray; }
+    .navigation ul li a:hover {
+      background: #e6e6e6; }
+
+.post {
+  padding: 20px;
+  border-bottom: 1px solid #c9c9c9;
+  border-top: 1px solid #fff; }
+  .post .title {
+    font-size: 14px;
+    color: #fe5819;
+    margin-bottom: 10px; }
+  .post .content {
+    font-size: 12px;
+    font-family: 'Verdana';
+    line-height: 1.5;
+    color: #404040; }

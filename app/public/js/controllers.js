@@ -1,6 +1,6 @@
 var controllers = angular.module('app.controllers', ['app.services']);
 
-controllers.controller('SpongeController', ['$scope', '$state', 'spongeFactory', function($scope, $state, spongeFactory) {
+controllers.controller('MainController', ['$scope', '$state', 'spongeFactory', 'postFactory', function($scope, $state, spongeFactory, postFactory) {
 	var slug;
 
 	if(!$state.params.path) {
@@ -11,5 +11,10 @@ controllers.controller('SpongeController', ['$scope', '$state', 'spongeFactory',
 
 	spongeFactory.getSponge(slug).then(function(result) {
 		$scope.childSponges = result.data.sponges;
+
+		postFactory.getPosts(result.data._id).then(function(result) {
+			console.log(result);
+			$scope.posts = result.data;
+		});
 	});
 }]);
