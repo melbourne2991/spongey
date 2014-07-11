@@ -94,7 +94,6 @@ var buildPosts = function() {
 
 				post.save(function(err) {
 					if(err) throw err;
-					console.log('Successful post!');
 				})
 			});
 		});
@@ -109,4 +108,9 @@ module.exports = function() {
 	mongoose.connection.collections['posts'].drop(function(err) {
 		setTimeout(buildPosts, 4000);
 	});
+
+	mongoose.connection.collections['users'].drop(function(err) {
+
+	});
+
 };

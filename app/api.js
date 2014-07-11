@@ -8,7 +8,7 @@ module.exports = function(express) {
 	api.post('/sponge', SpongesController.createSponge);
 
 	api.get('/posts', PostsController.getPosts);
-	api.post('/post', PostsController.createPost)
+	api.post('/post', PostsController.createPost);
 	
 	return api;
 }
