@@ -1,6 +1,6 @@
 Sponge = require('../models/Sponge');
 
-var SpongesController = module.exports = {}
+var SpongesController = module.exports = {};
 
 SpongesController.getSponge = function(req, res) {
 	var permalink = req.param(0);

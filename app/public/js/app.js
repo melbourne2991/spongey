@@ -7,15 +7,15 @@ angular.module('app', [
 	'app.directives',
 	'app.controllers'
 ]).config(['$stateProvider', function($stateProvider) {
-	$stateProvider
-	.state('default', {
-		templateUrl: 'templates/sponges/view',
-		url: '',
-		controller: 'MainController'
-	})
-	.state('sponge', {
-		templateUrl: 'templates/sponges/view',
-		url: '/sponge/{path:.*}',
-		controller: 'MainController'
-	})
+	// $stateProvider
+	// .state('default', {
+	// 	templateUrl: 'templates/sponges/view',
+	// 	url: '',
+	// 	controller: 'MainController'
+	// })
+	// .state('sponge', {
+	// 	templateUrl: 'templates/sponges/view',
+	// 	url: '/sponge/{path:.*}',
+	// 	controller: 'MainController'
+	// })
 }]);

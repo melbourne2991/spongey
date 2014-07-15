@@ -1,5 +1,6 @@
 var SpongesController = require('./controllers/sponges');
-var PostsController = require('./controllers/posts')
+var PostsController = require('./controllers/posts');
+var UsersController = require('./controllers/users')
 
 module.exports = function(express) {
 	var api = express.Router();
@@ -9,6 +10,8 @@ module.exports = function(express) {
 
 	api.get('/posts', PostsController.getPosts);
 	api.post('/post', PostsController.createPost);
+
+	api.get('/profiles', UsersController.getProfiles)
 	
 	return api;
 }

@@ -9,23 +9,45 @@
 body, html {
   margin: 0;
   padding: 0;
-  background: #f7f7f7;
-  font-family: 'Ubuntu', sans-serif; }
+  background: #F1F1F1;
+  font-family: 'Verdana', sans-serif;
+  font-size: 12px; }
 
 h1 {
   font-family: 'Futura';
   font-size: 40px; }
 
 h2 {
-  font-family: 'Futura';
+  font-family: 'Bariol';
+  color: #6d6d6d;
   font-size: 24px; }
 
 ul li a {
   text-decoration: none; }
 
-.row {
+.tagline {
+  font-size: 48px;
+  text-align: center; }
+
+.button {
+  border-radius: 5px;
+  background: #EBEBEB;
+  color: #000;
+  padding: 5px 10px;
   display: block;
-  padding: 20px; }
+  text-align: center;
+  cursor: pointer; }
+  .button:hover {
+    background: #2f9e52; }
+
+.button.green {
+  color: #fff;
+  background: #3BC567; }
+  .button.green:hover {
+    background: #2f9e52; }
+
+.row {
+  display: block; }
   .row:after {
     content: "";
     display: table;
@@ -39,29 +61,68 @@ ul.horizontal {
     ul.horizontal li a {
       padding: 20px; }
 
-.header {
+#header .logo-medium {
+  float: left;
   display: block;
-  background: #fff; }
-  .header:after {
+  margin-right: 1.16509%;
+  width: 11.48055%; }
+  #header .logo-medium:last-child {
+    margin-right: 0; }
+
+#header .login {
+  float: left;
+  display: block;
+  margin-right: 1.16509%;
+  width: 19.91097%;
+  margin-left: 67.44339%; }
+  #header .login:last-child {
+    margin-right: 0; }
+
+#profile_listings .profile {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  #profile_listings .profile:last-child {
+    margin-right: 0; }
+
+.container {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px; }
+  .container:after {
     content: "";
     display: table;
     clear: both; }
 
-.logo-medium {
-  width: 200px; }
-  .logo-medium img {
-    width: 100%; }
+#header {
+  display: block;
+  background: #DA3339;
+  padding: 15px 20px;
+  color: #fff; }
+  #header:after {
+    content: "";
+    display: table;
+    clear: both; }
 
-.navigation {
-  background: #efefef;
-  color: #000; }
-  .navigation ul li:last-child a {
+.logo-medium img {
+  width: 100%; }
+
+.login span {
+  margin: 10px; }
+
+#navigation {
+  background: #F3F3F3;
+  color: #000;
+  border-bottom: 1px solid #ccc; }
+  #navigation ul li:last-child a {
     border-right: 1px solid #b3b3b3; }
-  .navigation ul li a {
+  #navigation ul li a {
     border-left: 1px solid #b3b3b3;
     padding: 20px;
     color: gray; }
-    .navigation ul li a:hover {
+    #navigation ul li a:hover {
       background: #e6e6e6; }
 
 .post {
@@ -77,3 +138,49 @@ ul.horizontal {
     font-family: 'Verdana';
     line-height: 1.5;
     color: #404040; }
+
+.profile {
+  background: #fff;
+  margin-top: 20px; }
+  .profile .header, .profile .body {
+    padding: 10px;
+    display: block; }
+    .profile .header:after, .profile .body:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .profile .header {
+    border-bottom: 1px solid #cccccc; }
+  .profile .name {
+    text-align: center;
+    color: #DA3339;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: left;
+    float: left;
+    display: block;
+    margin-right: 1.16509%;
+    width: 87.35436%; }
+    .profile .name:last-child {
+      margin-right: 0; }
+  .profile .follow {
+    float: left;
+    display: block;
+    margin-right: 1.16509%;
+    width: 11.48055%; }
+    .profile .follow:last-child {
+      margin-right: 0; }
+
+.follow {
+  position: relative;
+  padding-left: 30px;
+  height: 25px; }
+  .follow .plus {
+    font-size: 18px;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    color: #23773e; }
+  .follow .text {
+    text-transform: uppercase;
+    font-size: 10px; }

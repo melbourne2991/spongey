@@ -18,3 +18,11 @@ services.factory('postFactory', ['$http', function($http) {
 			}
 		}
 	}]);
+
+services.factory('profileFactory', ['$http', function($http) {
+		return {
+			getProfiles: function() {
+				return $http.get('/api/profiles');
+			}
+		}
+	}]);

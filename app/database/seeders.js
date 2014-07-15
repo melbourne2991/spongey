@@ -1,6 +1,7 @@
 var _		= require('lodash');
 var Sponge  = require('../models/Sponge');
 var Post    = require('../models/Post');
+var User 	= require('../models/User');
 var mongoose 	= require('mongoose');
 
 var buildSponges = function(seeder, count, parent) {
@@ -100,6 +101,64 @@ var buildPosts = function() {
 	});
 }
 
+var buildUsers = function() {
+	var seed_names = ['Jim', 'Joe', 'Freddy', 'Miguel', 'Pistachio', 'Brent', 'Tory', 'Rohan', 'Billy', 'Simba', 'Porcupine', 'Flumrail', 'Trent', 'Punch', 'Normal', 'Queldor', 'Frederson', 'Jimlon', 'Pondon', 'Shewp', 'Sugglar', 'Friedrick', 'Spoonson', 'Shubalaba', 'Skulljit', 'AssMan', 'Shiej', 'Sudda', 'Sugar', 'Bailey', 'Soothire', 'Oberdawg'];
+	var seed_locations = ['Melbourne, Australia', 'Izzuzu, China', 'Rome, Italy', 'Paris, France', 'Gonzberg, Prushia', 'Ickmael, Arabia', 'London, UK', 'New York, USA', 'Washington, USA'];
+	var seed_interests = ['Art', 'Design', 'Artificial Intelligence', 'Programming', 'UX Design', 'UI Design', 'Skiiing', 'Kayaking', 'Metalworks', 'Marketing', 'Gaming', 'Reading', 'Movies'];
+	var seed_specialisations = ['Designer', 'Developer', 'Marketer', 'Big Data Scientist', 'Entrepreneur'];
+
+	for(var i = 0; i < 20; i++) {
+		var random = function(array) { return Math.floor(Math.random() * array.length); };
+		var first_name 	= seed_names[random(seed_names)];
+		var last_name 	= seed_names[random(seed_names)];
+		var specialisations = [];
+
+		var rnd = Math.floor(Math.random() * 3);
+
+		for(var c = rnd; c < 3; c++) {
+			var addSpecialisation = function() {
+				var specialisation_to_add = seed_specialisations[random(seed_specialisations)];
+				var exists = false;
+
+				_.forEach(specialisations, function(specialisation, index) {
+					if(specialisation === specialisation_to_add) {
+						exists = false
+					} 
+				});
+
+				if(!exists) {
+					specialisations.push(specialisation_to_add);
+				} else {
+					addSpecialisation();
+				}
+			}
+
+			addSpecialisation();
+		}
+
+		var user = new User({
+			email: last_name + first_name + random(seed_names) + '@gmail.com',
+			username: last_name + random(seed_names) + first_name,
+			password: random(seed_names) + 'kdjs',
+			profile: {
+				first_name: first_name,
+				last_name: last_name,
+				location: seed_locations[random(seed_locations)],
+				skills: specialisations,
+				interests: [
+					seed_interests[random(seed_interests)],
+					seed_interests[random(seed_interests)],
+					seed_interests[random(seed_interests)]
+				]
+			}
+		});
+
+		user.save(function(err) {
+			if(err) console.log(err);
+		});
+	}
+}
+
 module.exports = function() {
 	mongoose.connection.collections['sponges'].drop(function(err) {
 		buildSponges(sponge_seed, false, 0);
@@ -110,7 +169,6 @@ module.exports = function() {
 	});
 
 	mongoose.connection.collections['users'].drop(function(err) {
-
+		buildUsers();
 	});
-
 };

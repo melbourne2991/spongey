@@ -1,6 +1,6 @@
 .row {
 	@include row();
-	padding: $spacing;
+	// padding: $spacing;
 }
 
 ul.horizontal {
@@ -12,4 +12,17 @@ ul.horizontal {
 			padding: $spacing;
 		}
 	}
+}
+
+#header .logo-medium {
+	@include span-columns(3 of 24);
+}
+
+#header .login {
+	@include span-columns(5 of 24);
+	@include shift(16 of 24);
+}
+
+#profile_listings .profile {
+	@include span-columns(12 of 12);
 }

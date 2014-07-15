@@ -1,4 +1,15 @@
 extends layouts/master
 block main
-	#app(data-ng-app="app" data-ui-view="")
+	#header
+		.container
+			.logo-medium
+				img(src="img/logo.png")
+			.login
+				span Login
+				span Create Account
 
+	#navigation.row
+		#navigation
+	#body
+		.container
+			#profile_listings(data-profile-listings data-ng-app="app")
