@@ -18,4 +18,36 @@ passport.use(new LocalStrategy(function(username, password, done) {
 	});
 }));
 
+passport.use(new FacebookStrategy({
+	clientID: '',
+	clientSecrete: '',
+	callbackURL: ''
+}, function(token, refreshToken, profile, done) {
+	process.nextTick(function() {
+		User.findOne({'facebook.id': profile.id}, function(err, user) {
+			if(err)
+				return done(err);
+
+			if(user) {
+				return done(null, user);
+			} else {
+				var user = new User();
+
+				user.facebook.id    		= profile.id;
+				user.facebook.token 		= token;
+				user.facebook.first_name  	= profile.name.giveName;
+				user.facebook.last_name  	= profile.name.familyName;
+				user.facebook.email 		= profile.emails[0].value;
+
+				user.save(function(err) {
+					if(err)
+						throw err;
+
+					return done(null, user);
+				});
+			}
+		});
+	});
+}));
+
 module.exports = passport;

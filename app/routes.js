@@ -34,6 +34,10 @@ module.exports = function(app, passport) {
 		});
 	});
 
+	app.get('/signup', function(req, res, next) {
+		res.render('signup');
+	});
+
 	app.get('/login', function(req, res, next) {
 		res.render('login');
 	});
