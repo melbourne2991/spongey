@@ -46,6 +46,16 @@ ul li a {
   .button.green:hover {
     background: #2f9e52; }
 
+.container {
+  padding-left: 20px;
+  padding-right: 20px; }
+  @media screen and (min-width: 1000px) {
+    .container {
+      margin: 0 auto;
+      width: 1000px;
+      padding-left: 0;
+      padding-right: 0; } }
+
 .row {
   display: block; }
   .row:after {
@@ -82,26 +92,24 @@ ul.horizontal {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 48.82117%; }
+  width: 100%; }
+  @media screen and (min-width: 1000px) {
+    #profile_listings .profile {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      #profile_listings .profile:last-child {
+        margin-right: 0; } }
   #profile_listings .profile:last-child {
     margin-right: 0; }
 
 #body {
   padding: 20px 0; }
 
-.container {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1000px; }
-  .container:after {
-    content: "";
-    display: table;
-    clear: both; }
-
 #header {
   display: block;
-  background: #DA3339;
+  background: #f4726d;
   padding: 15px 20px;
   color: #fff; }
   #header:after {
@@ -158,7 +166,7 @@ ul.horizontal {
     padding-top: 4px;
     font-size: 14px;
     text-align: center;
-    color: #DA3339;
+    color: #f4726d;
     text-transform: uppercase;
     font-weight: bolder;
     text-align: left;

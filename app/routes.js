@@ -34,6 +34,10 @@ module.exports = function(app, passport) {
 		});
 	});
 
+	app.get('/login', function(req, res, next) {
+		res.render('login');
+	});
+
 	app.post('/login', function(req, res, next) {
 		passport.authenticate('local', { session: true }, function(err, user, info) {
 			if(!user) {

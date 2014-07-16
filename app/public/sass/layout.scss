@@ -1,6 +1,17 @@
+.container {
+	padding-left: 20px;
+	padding-right: 20px;
+
+	@include media(1000px) {
+		margin: 0 auto;	
+		width: 1000px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 .row {
 	@include row();
-	// padding: $spacing;
 }
 
 ul.horizontal {
@@ -24,7 +35,11 @@ ul.horizontal {
 }
 
 #profile_listings .profile {
-	@include span-columns(6 of 12);
+	@include media(1000px) {
+		@include span-columns(6 of 12);
+	}
+
+	@include span-columns(12 of 12);
 }
 
 #body {

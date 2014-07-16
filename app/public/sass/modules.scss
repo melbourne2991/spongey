@@ -1,11 +1,7 @@
-.container {
-	@include outer-container();
-	width: 1000px;
-}
-
 #header {
 	@include row();
-	background: #DA3339;
+	// background: #DA3339;
+	background: $soft_red;
 	padding: 15px 20px;
 	color: #fff;
 }
@@ -81,7 +77,7 @@
 		padding-top: 4px;
 		font-size: 14px;
 		text-align: center;
-		color: #DA3339;
+		color: $soft_red;
 		text-transform: uppercase;
 		font-weight: bolder;
 		text-align: left;

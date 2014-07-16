@@ -1,15 +1,3 @@
-extends layouts/master
+extends layouts/angular
 block main
-	#header
-		.container
-			.logo-medium
-				img(src="img/logo.png")
-			.login
-				span Login
-				span Create Account
-
-	#navigation.row
-		#navigation
-	#body
-		.container
-			#profile_listings(data-profile-listings data-ng-app="app")
+	#profile_listings(data-profile-listings data-ng-app="app")
