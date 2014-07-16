@@ -66,7 +66,7 @@
 
 .profile {
 	background: #fff;
-	margin-top: 20px;
+	margin-bottom: 20px;
 
 	.header,.body {
 		padding: 10px;
@@ -78,16 +78,24 @@
 	}
 
 	.name {
+		padding-top: 4px;
+		font-size: 14px;
 		text-align: center;
 		color: #DA3339;
 		text-transform: uppercase;
 		font-weight: bolder;
 		text-align: left;
-		@include span-columns(21 of 24);
+		@include span-columns(18 of 24);
 	}
 
 	.follow {
-		@include span-columns(3 of 24);
+		@include span-columns(6 of 24);
+	}
+
+	.location {
+		color: #666;
+		font-weight: bolder;
+		font-size: 10px;
 	}
 }
 
@@ -95,6 +103,12 @@
 	position: relative;
 	padding-left: 30px;
 	height: 25px;
+
+	&:hover {
+		.plus {
+			color: $cool_green;			
+		}
+	}
 
 	.plus {
 		font-size: 18px;
@@ -105,9 +119,6 @@
 	}
 
 	.text {
-		// position: absolute;
-		// left: 35px;
-		// top: 5px;
 		text-transform: uppercase;
 		font-size: 10px;
 	}

@@ -105,35 +105,45 @@ var buildUsers = function() {
 	var seed_names = ['Jim', 'Joe', 'Freddy', 'Miguel', 'Pistachio', 'Brent', 'Tory', 'Rohan', 'Billy', 'Simba', 'Porcupine', 'Flumrail', 'Trent', 'Punch', 'Normal', 'Queldor', 'Frederson', 'Jimlon', 'Pondon', 'Shewp', 'Sugglar', 'Friedrick', 'Spoonson', 'Shubalaba', 'Skulljit', 'AssMan', 'Shiej', 'Sudda', 'Sugar', 'Bailey', 'Soothire', 'Oberdawg'];
 	var seed_locations = ['Melbourne, Australia', 'Izzuzu, China', 'Rome, Italy', 'Paris, France', 'Gonzberg, Prushia', 'Ickmael, Arabia', 'London, UK', 'New York, USA', 'Washington, USA'];
 	var seed_interests = ['Art', 'Design', 'Artificial Intelligence', 'Programming', 'UX Design', 'UI Design', 'Skiiing', 'Kayaking', 'Metalworks', 'Marketing', 'Gaming', 'Reading', 'Movies'];
-	var seed_specialisations = ['Designer', 'Developer', 'Marketer', 'Big Data Scientist', 'Entrepreneur'];
+	var seed_specialisations = ['Web Development', 'Photoshop', 'Illustrator', 'C#', 'UX', 'Wordpress', 'Machine Learning', 'Marketing', 'Product Management', 'Social Media Management', 'Magento', 'Copywriting', 'SEO'];
 
-	for(var i = 0; i < 20; i++) {
+	for(var i = 0; i < 50; i++) {
 		var random = function(array) { return Math.floor(Math.random() * array.length); };
 		var first_name 	= seed_names[random(seed_names)];
 		var last_name 	= seed_names[random(seed_names)];
 		var specialisations = [];
 
-		var rnd = Math.floor(Math.random() * 3);
+		var rnd = function() { return Math.floor(Math.random() * 6 + 1); };
 
-		for(var c = rnd; c < 3; c++) {
-			var addSpecialisation = function() {
-				var specialisation_to_add = seed_specialisations[random(seed_specialisations)];
-				var exists = false;
+		for(var c = 0; c < rnd(); c++) {
+			specialisations.push(seed_specialisations[random(seed_specialisations)]);
+		}
 
-				_.forEach(specialisations, function(specialisation, index) {
-					if(specialisation === specialisation_to_add) {
-						exists = false
-					} 
-				});
+		// for(var c = rnd; c < 3; c++) {
+		// 	var addSpecialisation = function() {
+		// 		var specialisation_to_add = seed_specialisations[random(seed_specialisations)];
+		// 		var exists = false;
 
-				if(!exists) {
-					specialisations.push(specialisation_to_add);
-				} else {
-					addSpecialisation();
-				}
-			}
+		// 		_.forEach(specialisations, function(specialisation, index) {
+		// 			if(specialisation === specialisation_to_add) {
+		// 				exists = false
+		// 			}
+		// 		});
 
-			addSpecialisation();
+		// 		if(!exists) {
+		// 			specialisations.push(specialisation_to_add);
+		// 		} else {
+		// 			addSpecialisation();
+		// 		}
+		// 	}
+
+		// 	addSpecialisation();
+		// }
+
+		console.log(first_name + ' ' + last_name);
+
+		if(!specialisations[0]) {
+			console.log('this fuckers undefined');
 		}
 
 		var user = new User({
@@ -152,6 +162,8 @@ var buildUsers = function() {
 				]
 			}
 		});
+
+		console.log(user);
 
 		user.save(function(err) {
 			if(err) console.log(err);

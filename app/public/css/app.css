@@ -82,9 +82,12 @@ ul.horizontal {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 100%; }
+  width: 48.82117%; }
   #profile_listings .profile:last-child {
     margin-right: 0; }
+
+#body {
+  padding: 20px 0; }
 
 .container {
   max-width: 68em;
@@ -141,7 +144,7 @@ ul.horizontal {
 
 .profile {
   background: #fff;
-  margin-top: 20px; }
+  margin-bottom: 20px; }
   .profile .header, .profile .body {
     padding: 10px;
     display: block; }
@@ -152,6 +155,8 @@ ul.horizontal {
   .profile .header {
     border-bottom: 1px solid #cccccc; }
   .profile .name {
+    padding-top: 4px;
+    font-size: 14px;
     text-align: center;
     color: #DA3339;
     text-transform: uppercase;
@@ -160,21 +165,27 @@ ul.horizontal {
     float: left;
     display: block;
     margin-right: 1.16509%;
-    width: 87.35436%; }
+    width: 74.70873%; }
     .profile .name:last-child {
       margin-right: 0; }
   .profile .follow {
     float: left;
     display: block;
     margin-right: 1.16509%;
-    width: 11.48055%; }
+    width: 24.12618%; }
     .profile .follow:last-child {
       margin-right: 0; }
+  .profile .location {
+    color: #666;
+    font-weight: bolder;
+    font-size: 10px; }
 
 .follow {
   position: relative;
   padding-left: 30px;
   height: 25px; }
+  .follow:hover .plus {
+    color: #3bc567; }
   .follow .plus {
     font-size: 18px;
     position: absolute;
