@@ -25,6 +25,25 @@ h2 {
 ul li a {
   text-decoration: none; }
 
+input[type="text"], textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #dedede; }
+
+button, .button {
+  background: #f4726d;
+  padding: 5px 10px;
+  border: #f0443e;
+  color: #fff;
+  margin-top: 5px;
+  border-radius: 5px; }
+
+.float_left {
+  float: left; }
+
+.float_right {
+  float: right; }
+
 .tagline {
   font-size: 48px;
   text-align: center; }
@@ -67,8 +86,9 @@ ul.horizontal {
   margin: 0;
   padding: 0; }
   ul.horizontal li {
-    display: inline; }
+    display: inline-block; }
     ul.horizontal li a {
+      display: inline-block;
       padding: 20px; }
 
 #header .logo-medium {
@@ -126,13 +146,13 @@ ul.horizontal {
 #navigation {
   background: #F3F3F3;
   color: #000;
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #dedede; }
   #navigation ul li:last-child a {
-    border-right: 1px solid #b3b3b3; }
+    border-right: 1px solid #dedede; }
   #navigation ul li a {
-    border-left: 1px solid #b3b3b3;
-    padding: 20px;
-    color: gray; }
+    border-left: 1px solid #dedede;
+    padding: 10px 20px;
+    color: #333333; }
     #navigation ul li a:hover {
       background: #e6e6e6; }
 

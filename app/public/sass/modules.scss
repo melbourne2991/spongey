@@ -19,19 +19,19 @@
 #navigation {
 	background: #F3F3F3;
 	color: #000;	
-	border-bottom: 1px solid #ccc;
+	border-bottom: $default_border;
 
 	ul li {
 		&:last-child {
 			a {
-				border-right: 1px solid lighten(#000, 70%);
+				border-right: $default_border;
 			}
 		}
 
 		a {
-			border-left: 1px solid lighten(#000, 70%);
-			padding: $spacing;
-			color:lighten(#000, 50%);
+			border-left: $default_border;
+			padding: $spacing/2 $spacing;
+			color:lighten(#000, 20%);
 
 			&:hover {
 				background: lighten(#000, 90%);

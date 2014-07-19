@@ -27,8 +27,6 @@ PostsController.createPost = function(req, res) {
 		_parent: mongoose.Types.ObjectId(req.body._parent)
 	});
 
-	console.log(req.body);
-
 	post.save(function(err) {
 		if(err && err.errors) {
 			res.json(err.errors);

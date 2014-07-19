@@ -140,11 +140,6 @@ var buildUsers = function() {
 		// 	addSpecialisation();
 		// }
 
-		console.log(first_name + ' ' + last_name);
-
-		if(!specialisations[0]) {
-			console.log('this fuckers undefined');
-		}
 
 		var user = new User({
 			email: last_name + first_name + random(seed_names) + '@gmail.com',
@@ -163,12 +158,28 @@ var buildUsers = function() {
 			}
 		});
 
-		console.log(user);
-
 		user.save(function(err) {
 			if(err) console.log(err);
 		});
 	}
+
+	var user = new User({
+		email: 'wleach1992@gmail.com',
+		username: 'pr0xy122',
+		password: 'w1ll1am',
+		profile: {
+			first_name: 'Will',
+			last_name: 'Leach',
+			location: 'Australia',
+			skills: 'Photoshop, HTML5, CSS3, AngularJS'
+		}
+	});
+
+	user.password = User.generateHash(user.password);
+
+	user.save(function(err) {
+		if(err) console.log(err);
+	})
 }
 
 module.exports = function() {

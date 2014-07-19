@@ -6,16 +6,33 @@ angular.module('app', [
 	'app.services',
 	'app.directives',
 	'app.controllers'
-]).config(['$stateProvider', function($stateProvider) {
-	// $stateProvider
-	// .state('default', {
-	// 	templateUrl: 'templates/sponges/view',
-	// 	url: '',
-	// 	controller: 'MainController'
-	// })
-	// .state('sponge', {
-	// 	templateUrl: 'templates/sponges/view',
-	// 	url: '/sponge/{path:.*}',
-	// 	controller: 'MainController'
-	// })
+]).config(['$httpProvider', '$stateProvider', function($httpProvider, $stateProvider) {
+	$stateProvider
+		.state('default', {
+			templateUrl: '/templates/user_home',
+			url: ''
+		})
+		.state('connections', {
+			template: '<div id="profile_listings" data-profile-listings=""></div>',
+			url: '/connections'
+		})
+		.state('login', {
+			template: '<div id="login" data-login-directive=""></div>',
+			url: '/login'
+		});
+
+	// Middlewares
+	$httpProvider.interceptors.push(function($injector) {
+		return {
+			request: function(config) {
+				return config;
+			},
+			response: function(response) {
+				return response;
+			},
+			responseError: function(response) {
+				if(response.status === 403) $injector.get('$state').go('login');
+			}
+		}
+	});
 }]);

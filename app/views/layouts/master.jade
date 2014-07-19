@@ -12,6 +12,12 @@ html
 				.login
 					span Login
 					span Create Account
+		#navigation
+			.container
+				ul.horizontal
+					each link, name in {"home": "/", "connections": "/#/connections", "profile": "/#/profile", "discuss": "/#/discuss", "collaborate": "/#/collaborate"}
+						li
+							a(href=link)=name
 		#body.container
 			block main
 		block footer_files

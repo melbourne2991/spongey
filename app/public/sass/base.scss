@@ -29,6 +29,30 @@ ul li a {
 	text-decoration: none;
 }
 
+input[type="text"],textarea {
+	width: 100%;
+	background:#fff;
+	border: $default_border;
+}
+
+button, .button {
+	$background: $soft_red;
+	background: $background;
+	padding: 5px 10px;
+	border: darken($background, 10%);
+	color: #fff;
+	margin-top: 5px;
+	border-radius: 5px;
+}
+
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+}
+
 .tagline {
 	font-size: 48px;
 	text-align: center;

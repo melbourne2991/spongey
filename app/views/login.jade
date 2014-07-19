@@ -1,5 +1,11 @@
 extends layouts/master
 block main
 	h2 login
-	input(type="text")
-	input(type="text")
+	label Username
+	input(type="text" data-form-username="")
+	label Password
+	input(type="text" data-form-password="")
+	button(data-action="login") Log In
+
+block footer_files
+	script(src="js/nonang/login.js")
