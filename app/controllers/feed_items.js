@@ -3,15 +3,14 @@ var FeedItem = require('../models/FeedItem');
 var FeedItemsController = module.exports = {};
 
 FeedItemsController.createFeedItem = function(req, res) {
-	console.log('req body coming up');
-	console.log(req.body);
-
 	var feed_item = new FeedItem({
 		user: req.user,
 		content: req.body.content
 	});
 
-	feed_item.save();
+	feed_item.save(function(err) {
+		err ? res.json(err.errors) : res.json(true);
+	});
 }
 
 FeedItemsController.getFeedItems = function(req, res) {

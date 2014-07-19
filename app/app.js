@@ -20,7 +20,7 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 passport.serializeUser(function(user, done) {
-        done(null, user.id);
+    done(null, user.id);
 });
 
 // used to deserialize the user

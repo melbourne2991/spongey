@@ -10,8 +10,8 @@ body, html {
   margin: 0;
   padding: 0;
   background: #F1F1F1;
-  font-family: 'Verdana', sans-serif;
-  font-size: 12px; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px; }
 
 h1 {
   font-family: 'Futura';
@@ -25,18 +25,55 @@ h2 {
 ul li a {
   text-decoration: none; }
 
-input[type="text"], textarea {
+label {
+  margin-bottom: 10px;
+  display: inline-block; }
+
+input[type="text"], input[type="password"], textarea {
   width: 100%;
   background: #fff;
-  border: 1px solid #dedede; }
+  border: 1px solid #dedede;
+  margin-bottom: 20px;
+  border-radius: 5px; }
+
+input[type="text"], input[type="password"] {
+  padding: 15px 0 15px 10px; }
 
 button, .button {
   background: #f4726d;
-  padding: 5px 10px;
-  border: #f0443e;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
   color: #fff;
-  margin-top: 5px;
-  border-radius: 5px; }
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 3px solid #f0443e;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+  button:hover, .button:hover {
+    background: #f0443e; }
+  button:before, button:after, .button:before, .button:after {
+    content: " ";
+    display: table; }
+  button:after, .button:after {
+    clear: both; }
+
+.button.small {
+  padding: 5px 10px; }
+
+.button.large {
+  padding: 15px 30px; }
+
+.button.green {
+  background: #3bc567;
+  border: 0;
+  color: #fff;
+  border-bottom: 3px solid #2f9e52; }
+  .button.green:hover {
+    background: #2f9e52; }
 
 .float_left {
   float: left; }
@@ -47,23 +84,6 @@ button, .button {
 .tagline {
   font-size: 48px;
   text-align: center; }
-
-.button {
-  border-radius: 5px;
-  background: #EBEBEB;
-  color: #000;
-  padding: 5px 10px;
-  display: block;
-  text-align: center;
-  cursor: pointer; }
-  .button:hover {
-    background: #2f9e52; }
-
-.button.green {
-  color: #fff;
-  background: #3BC567; }
-  .button.green:hover {
-    background: #2f9e52; }
 
 .container {
   padding-left: 20px;
@@ -77,9 +97,10 @@ button, .button {
 
 .row {
   display: block; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
   .row:after {
-    content: "";
-    display: table;
     clear: both; }
 
 ul.horizontal {
@@ -132,9 +153,10 @@ ul.horizontal {
   background: #f4726d;
   padding: 15px 20px;
   color: #fff; }
+  #header:before, #header:after {
+    content: " ";
+    display: table; }
   #header:after {
-    content: "";
-    display: table;
     clear: both; }
 
 .logo-medium img {
@@ -144,17 +166,19 @@ ul.horizontal {
   margin: 10px; }
 
 #navigation {
-  background: #F3F3F3;
-  color: #000;
-  border-bottom: 1px solid #dedede; }
+  background: #2e2d2d;
+  border-bottom: 1px solid #3b3a3a; }
   #navigation ul li:last-child a {
-    border-right: 1px solid #dedede; }
+    border-right: 1px solid #3b3a3a; }
   #navigation ul li a {
-    border-left: 1px solid #dedede;
+    border-left: 1px solid #3b3a3a;
     padding: 10px 20px;
-    color: #333333; }
+    color: #d1d2d2;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px; }
     #navigation ul li a:hover {
-      background: #e6e6e6; }
+      background: #333232; }
 
 .post {
   padding: 20px;
@@ -176,9 +200,10 @@ ul.horizontal {
   .profile .header, .profile .body {
     padding: 10px;
     display: block; }
+    .profile .header:before, .profile .header:after, .profile .body:before, .profile .body:after {
+      content: " ";
+      display: table; }
     .profile .header:after, .profile .body:after {
-      content: "";
-      display: table;
       clear: both; }
   .profile .header {
     border-bottom: 1px solid #cccccc; }
@@ -211,7 +236,8 @@ ul.horizontal {
 .follow {
   position: relative;
   padding-left: 30px;
-  height: 25px; }
+  padding-top: 5px;
+  padding-bottom: 5px; }
   .follow:hover .plus {
     color: #3bc567; }
   .follow .plus {

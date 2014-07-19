@@ -1,11 +1,7 @@
 var User = require('./models/User');
 
 module.exports = function(app, passport) {
-	app.get('/', function(req, res, next) {
-		console.log('---here is the user---');
-		console.log(req.user);
-		next();
-	}, function(req, res) {
+	app.get('/', function(req, res) {
 		res.render('index', {modules: ['navigation']});
 	});
 

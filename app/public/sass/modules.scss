@@ -1,6 +1,5 @@
 #header {
 	@include row();
-	// background: #DA3339;
 	background: $soft_red;
 	padding: 15px 20px;
 	color: #fff;
@@ -17,24 +16,28 @@
 	}
 }
 #navigation {
-	background: #F3F3F3;
-	color: #000;	
-	border-bottom: $default_border;
+	$background: $dark_gray;
+	$border_color: lighten($dark_gray, 5%);
+	background: $background;
+
+	@include border($border_color, 'bottom');
 
 	ul li {
 		&:last-child {
 			a {
-				border-right: $default_border;
+				@include border($border_color, 'right');
 			}
 		}
 
 		a {
-			border-left: $default_border;
+			@include border($border_color, 'left');
 			padding: $spacing/2 $spacing;
-			color:lighten(#000, 20%);
-
+			color: invert($background);	
+			text-transform: uppercase;
+			font-size: 11px;
+			letter-spacing: 2px;
 			&:hover {
-				background: lighten(#000, 90%);
+				background: lighten($background, 2%);
 			}
 		}
 	}
@@ -98,8 +101,9 @@
 .follow {
 	position: relative;
 	padding-left: 30px;
-	height: 25px;
-
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
 	&:hover {
 		.plus {
 			color: $cool_green;			

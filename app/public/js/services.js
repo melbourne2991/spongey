@@ -57,23 +57,3 @@ services.factory('loginFactory', ['$http', function($http) {
 			user: false
 		}
 	}]);
-
-// services.factory('preResponse', ['$state', function($state) {
-// 		return {
-// 			request: function(config) {
-// 				return config;
-// 			},
-// 			response: function(response) {
-// 				return response;
-// 			},
-// 			responseError: function(response) {
-// 				if(response.status === 403) $state.go('login');
-// 			}
-// 		}
-// 	}]);
-
-// services.config(['$httpProvider', '$stateProvider', function($httpProvider, $stateProvider) {
-// 	console.log($httpProvider);
-// 	$httpProvider.interceptors.push('preResponse');
-// }])
-
