@@ -1,6 +1,15 @@
-h2 login
-label Username
-input(type="text" data-ng-model="user.username")
-label Password
-input(type="password" data-ng-model="user.password")
-button(data-ng-click="login()") Log In
+form
+	h2 login
+	label Username
+
+	div
+		span(ng-if="errors.username" class="error box inline-block") {{ errors.username }}
+
+	input(type="text" data-ng-model="user.username")
+	label Password
+
+	div
+		span(ng-if="errors.password" class="error box inline-block") {{ errors.password }}
+
+	input(type="password" data-ng-model="user.password")
+	button(data-ng-click="login()") Log In

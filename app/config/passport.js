@@ -8,13 +8,13 @@ passport.use(new LocalStrategy(function(username, password, done) {
 		if(err) return done(err);
 
 		if(!user) {
-			return done(null, false, { message: 'Could not find a user with that username'});
+			return done(null, false, { error: 'Could not find a user with that username'});
 		}
 
 		if(user.validPassword(password)) {
 			return done(null, user);
 		} else {
-			return done(null, false, { message: 'Incorrect Password' });
+			return done(null, false, { error: 'Incorrect Password' });
 		}
 	});
 }));

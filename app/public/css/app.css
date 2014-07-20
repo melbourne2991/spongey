@@ -10,30 +10,34 @@ body, html {
   margin: 0;
   padding: 0;
   background: #F1F1F1;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px; }
+  font-family: 'Roboto', 'Helvetica Neue' sans-serif;
+  font-size: 1em; }
 
 h1 {
   font-family: 'Futura';
-  font-size: 40px; }
+  font-size: 3.5em;
+  color: #000; }
 
 h2 {
   font-family: 'Bariol';
-  color: #6d6d6d;
-  font-size: 24px; }
+  color: #3a3a3a;
+  font-size: 2.5em; }
 
 ul li a {
   text-decoration: none; }
 
 label {
   margin-bottom: 10px;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 1.5em;
+  color: #474747; }
 
 input[type="text"], input[type="password"], textarea {
   width: 100%;
   background: #fff;
   border: 1px solid #dedede;
   margin-bottom: 20px;
+  padding: 20px;
   border-radius: 5px; }
 
 input[type="text"], input[type="password"] {
@@ -84,6 +88,22 @@ button, .button {
 .tagline {
   font-size: 48px;
   text-align: center; }
+
+.error {
+  color: #e91a12; }
+
+.error.box {
+  background: #fde5e4;
+  border: 1px solid #e91a12;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px; }
+
+.inline {
+  display: inline; }
+
+.inline-block {
+  display: inline-block; }
 
 .container {
   padding-left: 20px;
@@ -167,11 +187,11 @@ ul.horizontal {
 
 #navigation {
   background: #2e2d2d;
-  border-bottom: 1px solid #3b3a3a; }
+  border-bottom: 1px solid #484646; }
   #navigation ul li:last-child a {
-    border-right: 1px solid #3b3a3a; }
+    border-right: 1px solid #484646; }
   #navigation ul li a {
-    border-left: 1px solid #3b3a3a;
+    border-left: 1px solid #484646;
     padding: 10px 20px;
     color: #d1d2d2;
     text-transform: uppercase;

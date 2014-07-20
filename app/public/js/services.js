@@ -21,8 +21,14 @@ services.factory('postFactory', ['$http', function($http) {
 
 services.factory('feedItemsFactory', ['$http', function($http) {
 		return {
-			getFeedItems: function(page) {
-				return $http.get('/api/feeditems');
+			getFeedItems: function(page, multiplier) {
+				page = page || 0;
+				multiplier = multiplier || 10;
+
+				console.log(page);
+				console.log(multiplier);
+
+				return $http.get('/api/feeditems?page=' + page + '&multiplier=' + multiplier);
 			},
 			getFeedItem: function(data) {
 				return $http.get('/api/feeditem');

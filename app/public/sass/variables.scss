@@ -3,6 +3,8 @@ $spacing: 20px;
 $cool_green:  #3BC567;
 $soft_red: #f4726d;
 $dark_gray: #2E2D2D;
+$text_color_1: darken(#6d6d6d, 20%);
+$error_color: darken($soft_red, 20%);
 
 @mixin border($color, $side) {
 	@if($side == '') {

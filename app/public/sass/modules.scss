@@ -17,7 +17,7 @@
 }
 #navigation {
 	$background: $dark_gray;
-	$border_color: lighten($dark_gray, 5%);
+	$border_color: lighten($dark_gray, 10%);
 	background: $background;
 
 	@include border($border_color, 'bottom');
@@ -103,7 +103,7 @@
 	padding-left: 30px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	
+
 	&:hover {
 		.plus {
 			color: $cool_green;			
