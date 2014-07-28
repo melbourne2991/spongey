@@ -10,7 +10,16 @@ FeedItemsController.createFeedItem = function(req, res) {
 	});
 
 	feed_item.save(function(err) {
-		err ? res.json(err) : res.json(feed_item);
+		if(err) {
+			res.json(err);
+		} else {
+			FeedItem.findById(feed_item._id, 'user content created_at updated_at')
+				.populate('user')
+				.exec(function(err, results) {
+					if (err) console.log(err);
+					res.json(results)
+				});
+		}
 	});
 }
 

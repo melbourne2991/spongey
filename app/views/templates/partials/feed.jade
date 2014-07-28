@@ -1,3 +1,22 @@
 div
 	textarea(data-ng-model="inputs.content")
 	button(data-ng-click="submitInput()") Submit
+	.feed_items
+		.feed_item.row(data-ng-repeat="feedItem in feedItems") 
+			.header 
+				.name {{ feedItem.user.profile.first_name }} {{ feedItem.user.profile.last_name }} 
+				.datetime
+			.body {{ feedItem.content }}
+			.body.second
+				span.comments comments - 2 
+				span.likes likes - 4
+			//- div(data-ng-if="feedItem.comments")
+			//- 	div(ng-repeat="comment in feedItem.comments") {{ comment.content }}
+			//- .footer.commenting(data-ng-show="feedItem.state.commenting")
+			//- 	textarea
+			//- .footer
+			//- 	span.like(data-ng-click="like()") 
+			//- 		.span Like 
+			//- 		.img
+			//- 	span.reply(data-ng-click="feedItem.state.commenting = !feedItem.state.commenting") Reply
+			//- 		.img

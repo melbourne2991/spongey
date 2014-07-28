@@ -9,7 +9,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  background: #F1F1F1;
+  background: rgba(243, 243, 243, 0.85);
   font-family: 'Roboto', 'Helvetica Neue' sans-serif;
   font-size: 1em; }
 
@@ -179,6 +179,15 @@ ul.horizontal {
   #header:after {
     clear: both; }
 
+.header, .body, .footer {
+  padding: 10px;
+  display: block; }
+  .header:before, .header:after, .body:before, .body:after, .footer:before, .footer:after {
+    content: " ";
+    display: table; }
+  .header:after, .body:after, .footer:after {
+    clear: both; }
+
 .logo-medium img {
   width: 100%; }
 
@@ -217,6 +226,8 @@ ul.horizontal {
 .profile {
   background: #fff;
   margin-bottom: 20px; }
+  .profile .name {
+    padding-top: 4px; }
   .profile .header, .profile .body {
     padding: 10px;
     display: block; }
@@ -227,20 +238,6 @@ ul.horizontal {
       clear: both; }
   .profile .header {
     border-bottom: 1px solid #cccccc; }
-  .profile .name {
-    padding-top: 4px;
-    font-size: 14px;
-    text-align: center;
-    color: #f4726d;
-    text-transform: uppercase;
-    font-weight: bolder;
-    text-align: left;
-    float: left;
-    display: block;
-    margin-right: 1.16509%;
-    width: 74.70873%; }
-    .profile .name:last-child {
-      margin-right: 0; }
   .profile .follow {
     float: left;
     display: block;
@@ -269,3 +266,123 @@ ul.horizontal {
   .follow .text {
     text-transform: uppercase;
     font-size: 10px; }
+
+.feed_items {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 5px; }
+
+.feed_item {
+  margin: 10px 0;
+  font-size: 0.9em; }
+  .feed_item .header {
+    padding-bottom: 0; }
+  .feed_item .footer {
+    border-top: 1px solid #dedede; }
+  .feed_item .footer.commenting {
+    background: #fafafa; }
+    .feed_item .footer.commenting textarea {
+      margin-bottom: 0; }
+  .feed_item .name, .feed_item .datetime {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    .feed_item .name:last-child, .feed_item .datetime:last-child {
+      margin-right: 0; }
+  .feed_item .comments, .feed_item .likes {
+    font-size: 0.8em;
+    color: #2e2d2d;
+    margin-right: 10px;
+    display: inline-block; }
+  .feed_item .like, .feed_item .reply {
+    background: #f68985;
+    background: #f68985;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px; }
+    .feed_item .like:hover, .feed_item .reply:hover {
+      cursor: pointer;
+      background: #f25b56; }
+  .feed_item .reply {
+    padding-right: 29px;
+    display: block;
+    float: left;
+    position: relative; }
+    .feed_item .reply .img {
+      position: absolute;
+      right: 5px;
+      bottom: 4px;
+      padding: 2px;
+      margin: 1px;
+      float: right;
+      width: 19px;
+      height: 15px;
+      background: url(../img/reply.svg);
+      background-size: cover;
+      fill: #fff; }
+  .feed_item .like {
+    background: #f68985;
+    padding-right: 29px;
+    display: block;
+    float: left;
+    position: relative; }
+    .feed_item .like .span, .feed_item .like .img {
+      display: block;
+      float: left; }
+    .feed_item .like .img {
+      position: absolute;
+      right: 5px;
+      bottom: 2px;
+      padding: 2px;
+      margin: 1px;
+      float: right;
+      width: 20px;
+      height: 20px;
+      background: url(../img/like.svg);
+      background-size: cover;
+      fill: #fff; }
+  .feed_item .second.body {
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    padding: 5px 10px; }
+
+.name {
+  font-size: 14px;
+  text-align: center;
+  color: #f4726d;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: left;
+  float: left;
+  display: block;
+  margin-right: 1.16509%;
+  width: 74.70873%; }
+  .name:last-child {
+    margin-right: 0; }
+
+#user_home .left_sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  #user_home .left_sidebar:last-child {
+    margin-right: 0; }
+#user_home #feed {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  #user_home #feed:last-child {
+    margin-right: 0; }
+#user_home .right_sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  #user_home .right_sidebar:last-child {
+    margin-right: 0; }

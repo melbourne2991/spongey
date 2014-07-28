@@ -2,9 +2,11 @@ $default_border: 1px solid lighten(#ccc, 7%);
 $spacing: 20px;
 $cool_green:  #3BC567;
 $soft_red: #f4726d;
+$darker_red: darken($soft_red, 10%);
 $dark_gray: #2E2D2D;
 $text_color_1: darken(#6d6d6d, 20%);
 $error_color: darken($soft_red, 20%);
+$body_bg: rgba(243,243,243,.85);
 
 @mixin border($color, $side) {
 	@if($side == '') {

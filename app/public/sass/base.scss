@@ -9,7 +9,7 @@
 body,html {
 	margin: 0;
 	padding: 0;
-	background: #F1F1F1;
+	background: $body_bg;
 	font-family: 'Roboto', 'Helvetica Neue' sans-serif;
 	font-size: 1em;
 }
@@ -63,12 +63,12 @@ button, .button {
 	border-radius: 5px;
 	cursor: pointer;
 	border: 0;
-	border-bottom: 3px solid darken($background, 10%);
+	border-bottom: 3px solid $darker_red;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 
 	&:hover {
-		background: darken($background, 10%);
+		background: $darker_red;
 	}
 
 	@include clearfix();

@@ -1,5 +1,6 @@
 var _		= require('lodash');
 var Sponge  = require('../models/Sponge');
+var FeedItem = require('../models/FeedItem');
 var Post    = require('../models/Post');
 var User 	= require('../models/User');
 var mongoose 	= require('mongoose');
@@ -178,7 +179,21 @@ var buildUsers = function() {
 	user.password = User.generateHash(user.password);
 
 	user.save(function(err) {
-		if(err) console.log(err);
+		mongoose.connection.collections['feeditems'].drop(function(err) {
+			_.forEach([
+				'This is a comment',
+				'oh yeah loving this comment wooohoo',
+				'This is pretty cool isn\'t it!',
+				'Loving it maccas'
+			], function(val) {
+				var feeditem = new FeedItem({
+					user: user,
+					content: val
+				});
+
+				feeditem.save();
+			});
+		});
 	})
 }
 
@@ -194,4 +209,6 @@ module.exports = function() {
 	mongoose.connection.collections['users'].drop(function(err) {
 		buildUsers();
 	});
+
+
 };

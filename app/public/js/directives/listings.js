@@ -1,5 +1,8 @@
-directives.directive('profileListings', ['profileFactory', '$state', function(profileFactory, $state) {
+directives.directive('profileListings', ['profileFactory', 'connectionFactory', '$state', function(profileFactory, connectionFactory, $state) {
 	return {
+		scope: {
+			connected: '='
+		},
 		templateUrl: 'templates/partials/profile_listings',
 		controller: function($scope, $element, $attrs) {
 			profileFactory.getProfiles().then(function(result) {
@@ -9,12 +12,17 @@ directives.directive('profileListings', ['profileFactory', '$state', function(pr
 				_.forEach(profiles, function(item, i) {
 					var skills_string = '';
 
+					// Grabs array of all connections
+					// connectionFactory.getConnections(item._id).then(function(result) {
+					// 	item.connections = result.data;
+					// });
+
 					_.forEach(item.profile.skills, function(skill, i) {
 						i === 0 ? skills_string = skill : skills_string = skills_string + ', ' + skill;
 					});
 
 					item.profile.skills = skills_string;
-					console.log(skills_string);
+					console.log(item);
 				});
 
 				// Create grid array

@@ -5,6 +5,11 @@
 	color: #fff;
 }
 
+.header, .body, .footer {
+	padding: 10px;
+	@include row();
+}
+
 .logo-medium {
 	img {
 		width: 100%;
@@ -67,6 +72,10 @@
 	background: #fff;
 	margin-bottom: 20px;
 
+	.name {
+		padding-top: 4px;
+	}
+
 	.header,.body {
 		padding: 10px;
 		@include row();
@@ -74,17 +83,6 @@
 
 	.header {
 		border-bottom: 1px solid lighten(#000, 80%);
-	}
-
-	.name {
-		padding-top: 4px;
-		font-size: 14px;
-		text-align: center;
-		color: $soft_red;
-		text-transform: uppercase;
-		font-weight: bolder;
-		text-align: left;
-		@include span-columns(18 of 24);
 	}
 
 	.follow {
@@ -121,5 +119,150 @@
 	.text {
 		text-transform: uppercase;
 		font-size: 10px;
+	}
+}
+
+.feed_items {
+	margin-top: 20px;
+	background: #fff;
+	border: 1px solid #dedede;
+	border-radius: 5px;
+}
+
+.feed_item {
+	margin: 10px 0;
+	font-size: 0.9em;
+
+	.header {
+		padding-bottom: 0;
+	}
+
+	.footer {
+		border-top: $default_border;
+	}
+
+	.footer.commenting {
+		background: #fafafa;
+		textarea {
+			margin-bottom:0;
+		}
+	}
+
+	.name, .datetime {
+		@include span-columns(6 of 12);
+	}
+
+	.comments, .likes {
+		font-size: 0.8em;
+		color: $dark_gray;
+		margin-right: 10px;
+		display: inline-block;
+	}
+
+	.img {
+
+	}
+
+
+
+	.like, .reply {
+		$background: #f68985;
+	 	background: $background;
+
+		background: lighten(#f4726d, 5%);
+		font-weight: bold;
+		color: #fff;
+		margin-right: 10px;
+		display: inline-block;
+		padding: 5px;
+	 	border-radius: 5px;
+
+		&:hover {
+			cursor: pointer;
+			background: darken($background, 10%);
+		}
+	}
+
+	.reply {
+	 	padding-right: 29px;
+	 	display: block;
+	 	float: left;
+	 	position: relative;
+
+		.img {
+			// display: none;
+			position: absolute;
+			right: 5px;
+			bottom: 4px;
+			padding: 2px;
+			margin: 1px;
+			float: right;
+			width: 19px;
+			height: 15px;
+			background: url(../img/reply.svg);
+			background-size: cover;		
+			fill: #fff;				
+		}
+	}
+
+	.like {
+		$background: #f68985;
+	 	background: $background;
+	 	padding-right: 29px;
+	 	display: block;
+	 	float: left;
+
+
+		.span, .img {
+			display: block;
+			float: left;
+		}
+
+		position: relative;
+
+		.img {
+			// display: none;
+			position: absolute;
+			right: 5px;
+			bottom: 2px;
+			padding: 2px;
+			margin: 1px;
+			float: right;
+			width: 20px;
+			height: 20px;
+			background: url(../img/like.svg);
+			background-size: cover;		
+			fill: #fff;	
+		}
+	}
+
+	.second.body {
+		border-top: $default_border;
+		border-bottom: $default_border;
+		padding: 5px 10px;
+	}
+}
+
+.name {
+	font-size: 14px;
+	text-align: center;
+	color: $soft_red;
+	text-transform: uppercase;
+	font-weight: bolder;
+	text-align: left;
+	@include span-columns(18 of 24);
+}
+
+#user_home {
+	.left_sidebar {
+		@include span-columns(3 of 12);
+	}
+
+	#feed {
+		@include span-columns(6 of 12);
+	}
+
+	.right_sidebar {
+		@include span-columns(3 of 12);
 	}
 }

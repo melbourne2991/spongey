@@ -63,3 +63,24 @@ services.factory('loginFactory', ['$http', function($http) {
 			user: false
 		}
 	}]);
+
+
+services.factory('connectionFactory', ['$http', function($http) {
+		return {
+			createConnection: function(data) {
+				var promise = $http.post('/api/connection', {_connectee_id: data}).then(function(results) {
+					return results.data;
+				}.bind(this));
+
+				return promise;
+			},
+			getConnections: function(data) {
+				var promise = $http.get('/api/connections').then(function(results) {
+					this.connections = results.data;
+					return results.data;
+				}.bind(this));
+			},
+
+			connections: false
+		}
+	}]);

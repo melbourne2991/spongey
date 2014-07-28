@@ -3,9 +3,7 @@ div(data-ng-repeat="row in profile_grid" class="row")
 		div(class="header")
 			.row
 				div(class="name") {{ item.profile.first_name }} {{ item.profile.last_name }}
-				div(class="green follow button") 
-					span(class="plus") + 
-					span(class="text") Follow
+				div(data-follow-button="item._id")
 			.row
 				div(class="location") {{ item.profile.location }}
 		div(class="body")

@@ -5,7 +5,7 @@ directives.directive('loginDirective', ['loginFactory', '$state', function(login
 			var user = $scope.user = {
 				username: '',
 				password: ''
-			}
+			};
 
 			var errors = $scope.errors = {};
 
